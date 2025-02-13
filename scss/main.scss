@@ -1,0 +1,179 @@
+@use 'utilitários.scss' as u;
+
+main {
+    font-family: u.$font-2;
+
+    .home {
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        div {
+            &:first-child {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+
+                h1, p{
+                    font-size: 30px;
+                    font-weight: 500;
+                }
+
+                p, span, input {
+                    margin-top: 5px;
+                }
+
+                p {
+                    color: u.$border;
+                }
+            }
+
+            img {
+                width: 390px;
+                height: 390px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        align-items: center;
+
+        div {
+            width: 80%;
+            text-align: justify;
+        }
+    }
+
+    .skills {
+        margin-bottom: 50px;
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 80%;
+            margin: auto;
+            gap: 2rem;
+        }
+    
+        .item {
+            height: 120px;
+            width: 120px;
+            background-color: u.$bg-cards;
+            border-top-left-radius: 30px;
+    
+            &::after {
+                background-image: u.$gradient;
+                content: "";
+                height: 3px;
+                display: block;
+                position: relative;
+                bottom: -100%;
+            }
+        }
+    }
+
+    .projects {
+        height: 100vh;
+        flex-wrap: wrap; 
+        gap: 40px; 
+        padding: 20px 0px 50px 0;
+    
+        h1 {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .card {
+            position: relative;
+            transition: transform 0.2s ease-in-out, z-index 0.2s ease-in-out;
+            width: 394px;
+            z-index: 0;
+
+            &:hover {
+                transform: scale(1.1);
+                z-index: 10;
+            }
+
+            &:hover .oculto {
+                display: flex; // Exibe a terceira div
+            }
+
+            &:hover div:nth-child(2) {
+                opacity: 0; // Oculta a segunda div no hover
+                visibility: hidden; // Remove do layout visualmente
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+
+            div {
+                &:first-child {
+                    height: 246px;
+                    background-color: white; // Fundo branco
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &::after {
+                        background-image: linear-gradient(90deg, u.$gradient);
+                        content: "";
+                        height: 3px;
+                        display: block;
+                        position: relative;
+                        bottom: -243px;
+                    }
+                }
+
+                &:nth-child(2) {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.6); // Fundo transparente com filtro preto
+                    transition: opacity 0.3s ease, visibility 0.3s ease; // Suavidade na transição
+
+                    h3 {
+                        margin: 0;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+                }
+
+                &:last-child {
+                    position: absolute;
+                    bottom: -50px;
+                    width: 100%;
+                    height: 50px;
+                    background-color: rgb(33, 33, 33);
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    display: none; // Inicialmente oculto
+                    justify-content: space-between;
+                    align-items: center;
+
+                    p {
+                        margin-left: 30px;
+                    }
+
+                    input {
+                        padding: 5px 15px;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

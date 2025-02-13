@@ -1,0 +1,58 @@
+@use 'utilitários.scss' as u;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: u.$bg-body;
+    color: u.$text-white;
+    font-family: u.$font-1;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+    text-align: center;
+}
+
+header, main, footer {
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: transparent;
+    padding: 10px 15px;
+    color: u.$text-white;
+    border-radius: 30px;
+    border: 2px solid u.$border;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+    
+    &:hover {
+        background-image: u.$gradient;
+        transform: scale(0.95);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: u.$scroll-bg;
+}
+
+::-webkit-scrollbar-thumb {
+    background: u.$scroll-bar;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: u.$scroll-hover;
+}
