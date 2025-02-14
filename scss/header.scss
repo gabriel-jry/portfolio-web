@@ -3,7 +3,9 @@
 header {
     font-size: 16px;
     font-weight: 400;
-    position: relative;
+    position: fixed;
+    background-color: u.$bg-header;
+    z-index: 11;
 
     .contein {
         width: 80%;
@@ -13,9 +15,22 @@ header {
 
         div {
             &:first-child {
-                width: 30px;
-                height: 30px;
-                background-color: white;
+                width: 35px;
+                height: 35px;
+
+                &:hover {
+                    background-color: u.$bg-menu;
+                    border-radius: 50%;
+
+                    i {
+                        color: u.$bg-body;
+                    }
+                }
+                
+                i {
+                    font-size: 25px;
+                    color: u.$border;
+                }
             }
     
             &:nth-child(2) {
@@ -27,15 +42,87 @@ header {
             }
     
             &:last-child {
-                width: 60px;
-                height: 30px;
-                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 60px; /* Largura do container */
+                height: 17px; /* Altura do container */
+                
+                /* Container do toggle */
+                .toggle-container {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                /* Esconde o checkbox */
+                .toggle-checkbox {
+                    display: none;
+                }
+                
+                /* Estilo do label que representa o toggle */
+                .toggle-label {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    background-color: u.$border;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    padding: 5px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    transition: background-color 0.3s ease;
+                }
+                
+                /* Opções dentro do toggle */
+                .toggle-option {
+                    font-size: 2rem;
+                    color: #555;
+                    z-index: 1;
+                    flex: 1;
+                    text-align: center;
+                    line-height: 30px; /* Ajusta a altura do texto */
+                    pointer-events: none;
+                    transition: color 0.3s ease;
+                }
+                
+                /* Bolinha do toggle */
+                .toggle-ball {
+                    position: absolute;
+                    top: 5px; /* Ajusta a posição vertical da bolinha */
+                    left: 7px; /* Ajusta a posição horizontal da bolinha */
+                    width: 17px; /* Tamanho reduzido da bolinha */
+                    height: 17px; /* Tamanho reduzido da bolinha */
+                    background-color: u.$bg-header;
+                    border-radius: 50%;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                    transition: transform 0.3s ease;
+                }
+                
+                /* Quando o checkbox está selecionado */
+                .toggle-checkbox:checked + .toggle-label {
+                    background-color: white;
+                }
+                
+                /* Mover a bolinha para a direita */
+                .toggle-checkbox:checked + .toggle-label .toggle-ball {
+                    transform: translateX(30px); /* Ajusta o movimento da bolinha */
+                }
+                
+                /* Alterar cor do texto */
+                .toggle-checkbox:checked + .toggle-label .toggle-option:first-child {
+                    color: #ddd; /* Primeira opção fica apagada */
+                }
+                
+                .toggle-checkbox:checked + .toggle-label .toggle-option:last-child {
+                    color: white; /* Segunda opção ganha destaque */
+                }
             }
         }
     }
     
     &:after {
-        background-image: linear-gradient(90deg, #8257E6 0%, #A40EE4 92.32%);
+        background-image: u.$gradient;
         content: "";
         height: 1px;
         width: 100%;

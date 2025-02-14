@@ -1,9 +1,12 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 header {
   font-size: 16px;
   font-weight: 400;
-  position: relative;
+  position: fixed;
+  background-color: #13131F;
+  z-index: 11;
 }
 header .contein {
   width: 80%;
@@ -12,9 +15,19 @@ header .contein {
   align-items: center;
 }
 header .contein div:first-child {
-  width: 30px;
-  height: 30px;
-  background-color: white;
+  width: 35px;
+  height: 35px;
+}
+header .contein div:first-child:hover {
+  background-color: #8257E6;
+  border-radius: 50%;
+}
+header .contein div:first-child:hover i {
+  color: #13131F;
+}
+header .contein div:first-child i {
+  font-size: 25px;
+  color: #972AE5;
 }
 header .contein div:nth-child(2) h1 {
   padding: 15px 0;
@@ -22,9 +35,72 @@ header .contein div:nth-child(2) h1 {
   font-weight: 700;
 }
 header .contein div:last-child {
-  width: 60px;
-  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px; /* Largura do container */
+  height: 17px; /* Altura do container */
+  /* Container do toggle */
+  /* Esconde o checkbox */
+  /* Estilo do label que representa o toggle */
+  /* Opções dentro do toggle */
+  /* Bolinha do toggle */
+  /* Quando o checkbox está selecionado */
+  /* Mover a bolinha para a direita */
+  /* Alterar cor do texto */
+}
+header .contein div:last-child .toggle-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+header .contein div:last-child .toggle-checkbox {
+  display: none;
+}
+header .contein div:last-child .toggle-label {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #972AE5;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+header .contein div:last-child .toggle-option {
+  font-size: 2rem;
+  color: #555;
+  z-index: 1;
+  flex: 1;
+  text-align: center;
+  line-height: 30px; /* Ajusta a altura do texto */
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+header .contein div:last-child .toggle-ball {
+  position: absolute;
+  top: 5px; /* Ajusta a posição vertical da bolinha */
+  left: 7px; /* Ajusta a posição horizontal da bolinha */
+  width: 17px; /* Tamanho reduzido da bolinha */
+  height: 17px; /* Tamanho reduzido da bolinha */
+  background-color: #13131F;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+header .contein div:last-child .toggle-checkbox:checked + .toggle-label {
   background-color: white;
+}
+header .contein div:last-child .toggle-checkbox:checked + .toggle-label .toggle-ball {
+  transform: translateX(30px); /* Ajusta o movimento da bolinha */
+}
+header .contein div:last-child .toggle-checkbox:checked + .toggle-label .toggle-option:first-child {
+  color: #ddd; /* Primeira opção fica apagada */
+}
+header .contein div:last-child .toggle-checkbox:checked + .toggle-label .toggle-option:last-child {
+  color: white; /* Segunda opção ganha destaque */
 }
 header:after {
   background-image: linear-gradient(90deg, #8257E6 0%, #A40EE4 92.32%);

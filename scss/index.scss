@@ -32,12 +32,61 @@ header, main, footer {
     border-radius: 30px;
     border: 2px solid u.$border;
     cursor: pointer;
+    font-family: u.$font-2;
     transition: transform 0.2s ease, background 0.3s ease;
     
     &:hover {
         background-image: u.$gradient;
         transform: scale(0.95);
     }
+}
+
+.zoom-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1); // Aumenta o tamanho da div
+        
+    }
+}
+
+.typing-effect {
+  white-space: nowrap; /* Evita quebra de linha */
+  overflow: hidden; /* Esconde o texto que não cabe na área visível */
+  width: 100%; /* Define a largura completa após digitar */
+  animation: typing 2.5s steps(30, end), blink 0.5s step-end infinite; /* Digitação + cursor */
+}
+  
+/* Animação para simular a digitação */
+@keyframes typing {
+  from {
+    width: 0; /* Começa com texto oculto */
+  }
+  to {
+    width: 100%; /* Mostra o texto completo */
+  }
+}
+
+/* Animação para o cursor piscante */
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: u.$text-white; /* Alterna entre transparente e preto */
+  }
+}
+  
+.slide-in {
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateX(-150px); /* Começa mais fora da tela à esquerda */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Efeito mais lento */
+}
+
+/* Quando o elemento entra na tela */
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0); /* Move para a posição original */
 }
 
 ::-webkit-scrollbar {

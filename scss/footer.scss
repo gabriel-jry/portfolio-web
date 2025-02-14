@@ -1,0 +1,20 @@
+@use 'utilitários.scss' as u;
+
+footer {
+    display: flex;
+    position: relative;
+
+    p {
+        padding: 10px 0;
+    }
+
+    &::before {
+        background-image: u.$gradient;
+        content: "";
+        height: 1px;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+    }
+}
