@@ -1,11 +1,12 @@
 const toggleCheckbox = document.getElementById('toggle');
-const toggleOptions = document.querySelectorAll('.toggle-option');
 
+// Adiciona o evento de mudança no checkbox
 toggleCheckbox.addEventListener('change', () => {
-    // Verifica se o checkbox está marcado
     if (toggleCheckbox.checked) {
-        d
+        // Adiciona a classe para o modo claro
+        document.body.classList.add('light-mode');
     } else {
-        document.body.style.background = '#13131F'
+        // Remove a classe para voltar ao modo padrão
+        document.body.classList.remove('light-mode');
     }
 });

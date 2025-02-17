@@ -1,11 +1,15 @@
 @use 'utilitários.scss' as u;
 
+body {
+    position: relative;
+}
+
 header {
     font-size: 16px;
     font-weight: 400;
     position: fixed;
     background-color: u.$bg-header;
-    z-index: 11;
+    z-index: 9;
 
     .contein {
         width: 80%;
@@ -26,13 +30,13 @@ header {
                         color: u.$bg-body;
                     }
                 }
-                
+
                 i {
                     font-size: 25px;
                     color: u.$border;
                 }
             }
-    
+
             &:nth-child(2) {
                 h1 {
                     padding: 15px 0;
@@ -40,27 +44,24 @@ header {
                     font-weight: 700;
                 }
             }
-    
+
             &:last-child {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 60px; /* Largura do container */
-                height: 17px; /* Altura do container */
+                width: 60px; 
+                height: 17px;
                 
-                /* Container do toggle */
                 .toggle-container {
                     position: relative;
                     width: 100%;
                     height: 100%;
                 }
                 
-                /* Esconde o checkbox */
                 .toggle-checkbox {
                     display: none;
                 }
-                
-                /* Estilo do label que representa o toggle */
+
                 .toggle-label {
                     position: relative;
                     display: flex;
@@ -74,53 +75,48 @@ header {
                     transition: background-color 0.3s ease;
                 }
                 
-                /* Opções dentro do toggle */
                 .toggle-option {
                     font-size: 2rem;
                     color: #555;
                     z-index: 1;
                     flex: 1;
                     text-align: center;
-                    line-height: 30px; /* Ajusta a altura do texto */
+                    line-height: 30px;
                     pointer-events: none;
                     transition: color 0.3s ease;
                 }
                 
-                /* Bolinha do toggle */
                 .toggle-ball {
                     position: absolute;
-                    top: 5px; /* Ajusta a posição vertical da bolinha */
-                    left: 7px; /* Ajusta a posição horizontal da bolinha */
-                    width: 17px; /* Tamanho reduzido da bolinha */
-                    height: 17px; /* Tamanho reduzido da bolinha */
+                    top: 5px;
+                    left: 7px;
+                    width: 17px;
+                    height: 17px;
                     background-color: u.$bg-header;
                     border-radius: 50%;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
                     transition: transform 0.3s ease;
                 }
                 
-                /* Quando o checkbox está selecionado */
                 .toggle-checkbox:checked + .toggle-label {
                     background-color: white;
                 }
-                
-                /* Mover a bolinha para a direita */
+
                 .toggle-checkbox:checked + .toggle-label .toggle-ball {
-                    transform: translateX(30px); /* Ajusta o movimento da bolinha */
+                    transform: translateX(30px);
                 }
-                
-                /* Alterar cor do texto */
+
                 .toggle-checkbox:checked + .toggle-label .toggle-option:first-child {
-                    color: #ddd; /* Primeira opção fica apagada */
+                    color: #ddd;
                 }
-                
+
                 .toggle-checkbox:checked + .toggle-label .toggle-option:last-child {
-                    color: white; /* Segunda opção ganha destaque */
+                    color: white;
                 }
             }
         }
     }
-    
+
     &:after {
         background-image: u.$gradient;
         content: "";
@@ -129,5 +125,36 @@ header {
         display: block;
         position: absolute;
         bottom: 0;
+    }
+}
+
+.nav-bar-hidden {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    display: none;
+    z-index: -1;
+
+    ul {
+        padding: 0;
+        list-style: none;
+        font-size: 35px;
+    }
+
+    li {
+        margin: 15px 0;
+    }
+
+    a {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: u.$text-white;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

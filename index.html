@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="scss/header.css">
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="scss/footer.css">
+    <link rel="stylesheet" href="scss/light-mode.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <title>Portfólio</title>
 </head>
 <body>
     <header class="center">
         <div class="contein">
-            <div class="center">
+            <div class="center" onclick="nav_bar()">
                 <i class="fa-solid fa-bars"></i>
             </div>
             <div>
@@ -28,13 +29,23 @@
                 </label>
             </div>
         </div>
+
+        <div class="nav-bar-hidden center">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contacts">Contatos</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>
-        <section class="home">
+        <section class="home" id="home">
             <div>
                 <h1 class="typing-effect">Prazer, somos</h1>
-                <p class="typing-effect text-color">Gabriel França e Felipe</p>
+                <p class="typing-effect text-color">Gabriel França e Felipe Galdino</p>
                 <span class="typing-effect">Especialistas em Front-End e Back-End</span>
                 <input type="button" value="Fale conosco" class="btn">
             </div>            
@@ -44,242 +55,778 @@
             </div>
         </section>
 
-        <section class="about slide-in">
+        <section class="about slide-in" id="about">
             <h1>Sobre nós</h1>
             <div>
-                <p>
-                    Somos <strong>Gabriel França e Felipe</strong>, desenvolvedores apaixonados por tecnologia e inovação.
-                    Com experiência tanto em <strong>Front-End</strong> quanto em <strong>Back-End</strong>, transformamos ideias
-                    em soluções digitais eficientes, modernas e escaláveis.
-                </p>
-                <p>
-                    Nosso portfólio inclui diversos projetos, desde interfaces intuitivas e responsivas até sistemas
-                    robustos e performáticos. Trabalhamos com as principais tecnologias do mercado para garantir que cada
-                    projeto seja otimizado, seguro e alinhado às melhores práticas de desenvolvimento.
-                </p>
-                <p>
-                    Seja para criar um site do zero, otimizar um sistema ou desenvolver soluções personalizadas, estamos
-                    prontos para entregar <strong>resultados de alta qualidade</strong>.
-                </p>
-                <p>🚀 <strong>Vamos construir algo incrível juntos?</strong></p>
+              <p>
+                Somos <strong>Gabriel França e Felipe Galdino</strong>, desenvolvedores apaixonados por tecnologia e inovação. 
+                Com experiência tanto em <strong>Front-End</strong> quanto em <strong>Back-End</strong>, transformamos ideias 
+                em soluções digitais eficientes, modernas e escaláveis.
+              </p>
+              <p>
+                Nosso portfólio inclui diversos projetos, desde interfaces intuitivas e responsivas até sistemas 
+                robustos e performáticos. Trabalhamos com as principais tecnologias do mercado para garantir que cada 
+                projeto seja otimizado, seguro e alinhado às melhores práticas de desenvolvimento.
+              </p>
+              <p>
+                Além de nossos projetos concluídos, temos grandes objetivos para o futuro. Estamos nos dedicando ao aprendizado contínuo para nos tornarmos 
+                <strong>desenvolvedores Full Stack</strong>, ampliando nossas competências tanto no <strong>front-end</strong> quanto no <strong>back-end</strong>. 
+                Nosso foco está na <strong>qualidade do código</strong>, na performance e na criação de experiências digitais marcantes.
+              </p>
+              <p>
+                Seja para criar um site do zero, otimizar um sistema ou desenvolver soluções personalizadas, estamos 
+                prontos para entregar <strong>resultados de alta qualidade</strong>.
+              </p>
             </div>
-        </section>        
+        </section>               
 
-        <section class="skills slide-in">
+        <section class="skills slide-in" id="skills">
             <h1>Habilidades</h1>
             <div class="content">
-                <div class="item zoom-effect"></div>
-                <div class="item zoom-effect"></div>
-                <div class="item zoom-effect"></div>
-                <div class="item zoom-effect"></div>
-                <div class="item zoom-effect"></div>
-                <div class="item zoom-effect"></div>
-                <div class="item zoom-effect"></div>
-                <div class="item zoom-effect"></div>
+                <div class="item zoom-effect">
+                    <h1>HTML 5</h1>
+                    <img src="imgs/skills/icons8-html-48.png">
+                </div>
+                <div class="item zoom-effect">
+                    <h1>CSS 3</h1>
+                    <img src="imgs/skills/icons8-css-48.png">
+                </div>
+                <div class="item zoom-effect">
+                    <h1>PHP</h1>
+                    <img src="imgs/skills/icons8-php-50.png">
+                </div>
+                <div class="item zoom-effect">
+                    <h1>Python</h1>
+                    <img src="imgs/skills/icons8-python-48.png">
+                </div>
+                <div class="item zoom-effect">
+                    <h1>React</h1>
+                    <img src="imgs/skills/icons8-react-80.png">
+                </div>
+                <div class="item zoom-effect">
+                    <h1>Tailwind</h1>
+                    <img src="imgs/skills/icons8-tailwind-css-48.png">
+                </div>
+                <div class="item zoom-effect">
+                    <h1>Typescript</h1>
+                    <img src="imgs/skills/icons8-typescript-24.png">
+                </div>
+                <div class="item zoom-effect">
+                    <h1>SCSS</h1>
+                    <img src="imgs/skills/Sass_Logo_Color.svg.png">
+                </div>
             </div>
         </section>
 
-        <section class="projects center slide-in">
-            <h1>Projetos</h1>
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
-                </div>
-                <div class="oculto">
-                    <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+        <section class="projects center slide-in" id="projects">
+            <h1 class="titulo">Projetos</h1>
+        
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-
-                </div>
-                <div>
-                    <h3>titulo projeto</h3>
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
                 </div>
                 <div class="oculto">
                     <p>24 de outubro de 2025</p>
-                    <input type="button" value="ver mais" class="btn">
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
                 </div>
             </div>
 
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
+                </div>
+                <div class="oculto">
+                    <p>24 de outubro de 2025</p>
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card zoom-effect">
+                <div class="banner"></div>
+                <div class="titulo-projeto">
+                    <h3>Título do projeto</h3>
+                </div>
+                <div class="oculto">
+                    <p>24 de outubro de 2025</p>
+                    <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
+                </div>
+                <div class="oculto-content">
+                    <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
+                    <div class="content">
+                        <div class="video">
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="info">
+                            <h1>Titulo do projeto</h1>
+                            <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
+                            </p>
+                            <ul>
+                                <li>tecnologia a</li>
+                                <li>tecnologia b</li>
+                                <li>tecnologia c</li>
+                                <li>tecnologia d</li>
+                                <li>tecnologia e</li>
+                            </ul>
+                            <span>01/01/00001 criado por gabriel</span>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="zoom-effect">Acessar Projeto</a>
+                        <a href="#" class="zoom-effect">Acessar Repositório</a>
+                        <a href="#" class="zoom-effect">Github</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Repita os cards conforme necessário -->
         </section>
+        
 
-        <section class="contacts slide-in">
+        <section class="contacts slide-in" id="contacts">
             <h1>Contatos</h1>
 
             <div class="content">
                 <div class="info zoom-effect">
-                    <div class="logo"></div>
+                    <div class="logo">
+                        <img src="imgs/contacts/icons8-email-100.png">
+                    </div>
                     <h3>E-mail</h3>
-                    <p>Teste@gmail.com</p>
+                    <p>Gabrieldiatinf@gmail.com</p>
                 </div>
                 <div class="info zoom-effect">
-                    <div class="logo"></div>
-                    <h3>E-mail</h3>
-                    <p>Teste@gmail.com</p>
+                    <div class="logo">
+                        <img src="imgs/contacts/icons8-github-64.png">
+                    </div>
+                    <h3>Github</h3>
+                    <p>Gabriel-jry</p>
                 </div>
                 <div class="info zoom-effect">
-                    <div class="logo"></div>
+                    <div class="logo">
+                        <img src="imgs/contacts/icons8-linkedin-48.png">
+                    </div>
                     <h3>E-mail</h3>
-                    <p>Teste@gmail.com</p>
+                    <p><a href="https://www.linkedin.com/in/gabriel-fran%C3%A7a-0a091b340/" target="_blank">Gabriel França</a></p>
                 </div>
                 <div class="info zoom-effect">
-                    <div class="logo"></div>
-                    <h3>E-mail</h3>
-                    <p>Teste@gmail.com</p>
-                </div>
-                <div class="info zoom-effect">
-                    <div class="logo"></div>
-                    <h3>E-mail</h3>
-                    <p>Teste@gmail.com</p>
+                    <div class="logo">
+                        <img src="imgs/contacts/icons8-whatsapp-48.png">
+                    </div>
+                    <h3>Whatsapp</h3>
+                    <p><a href="https://wa.me/5584992029771?text=Ol%C3%A1!%20Vim%20pelo%20link%20do%20seu%20portf%C3%B3lio%20e%20estou%20interessado%20em%20desenvolver%20um%20site.%20Podemos%20conversar%20sobre%20as%20possibilidades%3F%20%F0%9F%98%8A" target="_blank">(84) 99202-9771</a></p>
                 </div>
             </div>
         </section>
@@ -291,5 +838,7 @@
 
     <script src="scripts/slide-in.js"></script>
     <script src="scripts/checkbox.js"></script>
+    <script src="scripts/nav-bar.js"></script>
+    <script src="scripts/projects.js"></script>
 </body>
 </html>

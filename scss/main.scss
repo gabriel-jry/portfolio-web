@@ -70,9 +70,28 @@ main {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            max-width: 80%;
+            max-width: 60%;
             margin: auto;
             gap: 2rem;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            
+                h1 {
+                    font-size: 17px;
+                    font-weight: 500;
+                    color: u.$text-white;
+                    margin: 10px 0 5px 0;
+                }
+            
+                img {
+                    margin: auto;
+                    height: 55px;
+                    width: 55px;
+                }
+            }            
         }
     
         .item {
@@ -87,105 +106,197 @@ main {
                 height: 3px;
                 display: block;
                 position: relative;
-                bottom: -100%;
+                bottom: 0;
             }
         }
     }
 
     .projects {
-        flex-wrap: wrap; 
-        gap: 40px; 
-        padding: 20px 0px 90px 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 20px 5px; /* Espaçamento de 20px entre os cards horizontalmente e 5px verticalmente */
+        margin: 20px auto 100px auto; /* Espaçamento de 20px em cima e nas laterais, e 10px embaixo */
+        width: 80vw;
+        height: auto;
+        position: relative;
+        justify-content: space-evenly; /* Garante que os cards fiquem distribuídos uniformemente */
     
-        h1 {
-            margin-bottom: 20px;
-            width: 100%;
+        .titulo {
+            position: absolute;
+            top: -80px;
         }
-
+        
         .card {
-            position: relative;
-            transition: transform 0.2s ease-in-out, z-index 0.2s ease-in-out;
+            background-color: white;
             width: 394px;
-            z-index: 0;
-
-            &:hover {
-                transform: scale(1.1);
-                z-index: 10;
+            height: 246px;
+            position: relative;
+            z-index: 1; /* Garantindo que o card fique acima de outros elementos */
+            
+            .oculto {
+                height: 50px;
+                width: 100%;
+                position: absolute;
+                bottom: -50px;
+                border-bottom-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+                justify-content: space-evenly;
+                align-items: center;
+                background-color: rgba(33, 33, 33, 0.9); /* Fundo escuro */
+                z-index: 2;
+                display: flex;
+                opacity: 0;
+                transform: translateY(0px);
+                transition: all 0.6s ease;
             }
-
+            
             &:hover .oculto {
-                display: flex; // Exibe a terceira div
+                opacity: 1;
+                transform: translateY(0);
             }
-
-            &:hover div:nth-child(2) {
-                opacity: 0; // Oculta a segunda div no hover
-                visibility: hidden; // Remove do layout visualmente
-                transition: opacity 0.3s ease, visibility 0.3s ease;
+    
+            &:hover .banner {
+                background-color: transparent;
+                backdrop-filter: none;
             }
-
-            div {
-                &:first-child {
-                    height: 246px;
-                    background-color: white; // Fundo branco
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    &::after {
-                        background-image: linear-gradient(90deg, u.$gradient);
-                        content: "";
-                        height: 3px;
-                        display: block;
-                        position: relative;
-                        bottom: -243px;
-                    }
-                }
-
-                &:nth-child(2) {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.6); // Fundo transparente com filtro preto
-                    transition: opacity 0.3s ease, visibility 0.3s ease; // Suavidade na transição
-
-                    h3 {
-                        margin: 0;
-                        font-size: 1.2rem;
-                        font-weight: bold;
-                    }
-                }
-
-                &:last-child {
-                    position: absolute;
-                    bottom: -50px;
-                    width: 100%;
-                    height: 50px;
-                    background-color: rgb(33, 33, 33);
-                    border-bottom-right-radius: 30px;
-                    border-bottom-left-radius: 30px;
-                    display: none; // Inicialmente oculto
-                    justify-content: space-between;
-                    align-items: center;
-
-                    p {
-                        margin-left: 30px;
-                    }
-
-                    input {
-                        padding: 5px 15px;
-                        margin-right: 15px;
-                    }
-                }
+    
+            &:hover .titulo-projeto {
+                display: none;
+            }
+    
+            input {
+                height: 30px;
+                padding: 2px 15px;
+                display: flex;
+                font-weight: 400;
+                font-size: 15px;
             }
         }
-    }
-
+    
+        .card.no-hover {
+            transform: scale(1);
+            box-shadow: none;
+            pointer-events: none;
+        }
+    
+        .banner {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+    
+        .titulo-projeto {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    
+        /* Centralizando a .oculto-content sobre todas as camadas */
+        .oculto-content {
+            display: none; /* Inicialmente invisível */
+            background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo escura */
+            position: fixed;
+            top: 0; /* Ajustado para ficar na tela */
+            left: 50%;
+            width: 80vw;
+            height: 75vh;
+            transform: translate(-50%, 0); /* Centralizando na tela */
+            z-index: 9999; /* Colocando acima de todos os outros elementos */
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            flex-direction: column;
+            position: relative;
+            pointer-events: all; /* Garante que os links e vídeos sejam clicáveis */
+        }
+    
+        /* Botão de fechar */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 11000; /* Botão de fechar em cima da div */
+            transition: transform 0.3s ease;
+        }
+    
+        .close-button:hover {
+            transform: scale(1.2);
+        }
+    
+        .content {
+            height: 90%;
+            display: flex;
+            flex-direction: row;
+        }
+    
+        .video {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .info {
+            width: 50%;
+            text-align: justify;
+            position: relative;
+            font-weight: 500;
+            color: #888;
+            font-size: 15px;
+    
+            h1 {
+                text-align: center;
+                margin: 10px 0;
+                color: #6a5acd;
+                font-size: 25px;
+            }
+    
+            p {
+                margin: 0px 15px;
+                max-height: 380px;
+                overflow-y: auto;
+            }
+    
+            ul {
+                margin-left: 35px;
+                margin-top: 10px;
+                margin-bottom: 15px;
+            }
+    
+            span {
+                margin: 0px 0px 0px 15px;
+                color: #6a5acd;
+            }
+        }
+    
+        .links {
+            height: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+    
+        .links a {
+            margin: 0 10px 20px 15px;
+            color: white;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, #8257e6 0%, #a40ee4 92.32%);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 400;
+            pointer-events: all;
+        }
+    }     
+    
     .contacts {
         display: flex;
         flex-direction: column;
@@ -202,6 +313,17 @@ main {
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            p {
+                a {
+                    color: u.$text-white;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
     
         .logo {
@@ -210,6 +332,18 @@ main {
             margin-bottom: 5px;
             border-radius: 50%;
             background-color: u.$bg-cards;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 60px;
+                max-height: 60px;
+                min-width: 50px;
+                min-height: 50px;
+            }
         }
     }
 }

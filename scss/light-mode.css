@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.light-mode main {
+  background-color: #F9F9F9;
+  color: rgb(19, 19, 31);
+}
+.light-mode .home input {
+  color: rgb(19, 19, 31);
+  font-weight: 500;
+}
+.light-mode .home input:hover {
+  color: white;
+}
+.light-mode .projects h3 {
+  color: white;
+}
+.light-mode .projects .oculto p {
+  color: white;
+}
+.light-mode .contacts .info p a {
+  color: rgb(19, 19, 31);
+}/*# sourceMappingURL=light-mode.css.map */
