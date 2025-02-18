@@ -93,99 +93,85 @@ main .skills .item::after {
 }
 main .projects {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 20px 5px; /* Espaçamento de 20px entre os cards horizontalmente e 5px verticalmente */
-  margin: 20px auto 100px auto; /* Espaçamento de 20px em cima e nas laterais, e 10px embaixo */
-  width: 80vw;
-  height: auto;
-  position: relative;
-  justify-content: space-evenly; /* Garante que os cards fiquem distribuídos uniformemente */
-  /* Centralizando a .oculto-content sobre todas as camadas */
-  /* Botão de fechar */
+  flex-direction: column;
+  /* Quando a oculto-content estiver visível */
 }
 main .projects .titulo {
-  position: absolute;
-  top: -80px;
+  margin-bottom: 20px;
+}
+main .projects .cards {
+  width: 80%;
+  padding-bottom: 150px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 0; /* Contexto padrão */
+}
+main .projects .card.no-hover {
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
 }
 main .projects .card {
   background-color: white;
-  width: 394px;
-  height: 246px;
+  width: 393px;
+  height: 245px;
   position: relative;
-  z-index: 1; /* Garantindo que o card fique acima de outros elementos */
+  z-index: 1;
+  transition: z-index 0.3s ease;
+  margin: 15px 0;
 }
-main .projects .card .oculto {
-  height: 50px;
-  width: 100%;
-  position: absolute;
-  bottom: -50px;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: rgba(33, 33, 33, 0.9); /* Fundo escuro */
-  z-index: 2;
-  display: flex;
-  opacity: 0;
-  transform: translateY(0px);
-  transition: all 0.6s ease;
-}
-main .projects .card:hover .oculto {
-  opacity: 1;
-  transform: translateY(0);
-}
-main .projects .card:hover .banner {
-  background-color: transparent;
-  -webkit-backdrop-filter: none;
-          backdrop-filter: none;
-}
-main .projects .card:hover .titulo-projeto {
-  display: none;
-}
-main .projects .card input {
-  height: 30px;
-  padding: 2px 15px;
-  display: flex;
-  font-weight: 400;
-  font-size: 15px;
-}
-main .projects .card.no-hover {
-  transform: scale(1);
-  box-shadow: none;
-  pointer-events: none;
-}
-main .projects .banner {
-  width: 100%;
+main .projects .card .banner {
+  z-index: 1;
   height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
-main .projects .titulo-projeto {
+main .projects .card .titulo-projeto {
+  z-index: 2;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-main .projects .oculto-content {
-  display: none; /* Inicialmente invisível */
-  background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo escura */
+main .projects .card .oculto {
+  position: absolute;
+  bottom: -60px;
+  z-index: 10;
+  height: 60px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(33, 33, 33);
+  opacity: 0;
+  transform: translateY(0px);
+  transition: all 0.6s ease;
+}
+main .projects .card .oculto-content {
   position: fixed;
-  top: 0; /* Ajustado para ficar na tela */
   left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
   width: 80vw;
-  height: 75vh;
-  transform: translate(-50%, 0); /* Centralizando na tela */
-  z-index: 9999; /* Colocando acima de todos os outros elementos */
+  height: 600px;
+  display: none;
+  flex-direction: column;
+  margin-top: 40px;
+  background-color: rgba(0, 0, 0, 0.774);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  flex-direction: column;
-  position: relative;
-  pointer-events: all; /* Garante que os links e vídeos sejam clicáveis */
+  pointer-events: auto; /* Garantir que o conteúdo dentro da .oculto-content seja interativo */
 }
-main .projects .close-button {
+main .projects .card .oculto-content .close-button {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -195,24 +181,22 @@ main .projects .close-button {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 11000; /* Botão de fechar em cima da div */
+  z-index: 11000; /* Garantir que o botão de fechar fique acima de tudo */
   transition: transform 0.3s ease;
 }
-main .projects .close-button:hover {
-  transform: scale(1.2);
-}
-main .projects .content {
+main .projects .card .oculto-content .content {
   height: 90%;
   display: flex;
   flex-direction: row;
 }
-main .projects .video {
+main .projects .card .oculto-content .content .video {
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 11000;
 }
-main .projects .info {
+main .projects .card .oculto-content .content .info {
   width: 50%;
   text-align: justify;
   position: relative;
@@ -220,33 +204,36 @@ main .projects .info {
   color: #888;
   font-size: 15px;
 }
-main .projects .info h1 {
+main .projects .card .oculto-content .content .info h1 {
   text-align: center;
   margin: 10px 0;
   color: #6a5acd;
   font-size: 25px;
 }
-main .projects .info p {
+main .projects .card .oculto-content .content .info p {
   margin: 0px 15px;
   max-height: 380px;
   overflow-y: auto;
 }
-main .projects .info ul {
+main .projects .card .oculto-content .content .info ul {
   margin-left: 35px;
   margin-top: 10px;
   margin-bottom: 15px;
 }
-main .projects .info span {
+main .projects .card .oculto-content .content .info span {
   margin: 0px 0px 0px 15px;
   color: #6a5acd;
 }
-main .projects .links {
+main .projects .card .oculto-content .close-button:hover {
+  transform: scale(1.2);
+}
+main .projects .card .oculto-content .links {
   height: 10%;
   display: flex;
   align-items: center;
   justify-content: left;
 }
-main .projects .links a {
+main .projects .card .oculto-content .links a {
   margin: 0 10px 20px 15px;
   color: white;
   text-decoration: none;
@@ -255,6 +242,31 @@ main .projects .links a {
   border-radius: 5px;
   font-weight: 400;
   pointer-events: all;
+}
+main .projects .card .oculto-content.visible {
+  display: flex;
+}
+main .projects .card:hover {
+  z-index: 100;
+}
+main .projects .card:hover .banner, main .projects .card:hover .titulo-projeto {
+  display: none;
+}
+main .projects .card:hover .oculto {
+  opacity: 1;
+  transform: translateY(0);
+}
+main .projects .card::after {
+  background-image: linear-gradient(90deg, #8257E6 0%, #A40EE4 92.32%);
+  content: "";
+  height: 3px;
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+main .projects.content-visible .card {
+  z-index: -1;
 }
 main .contacts {
   display: flex;

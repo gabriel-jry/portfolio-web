@@ -31,7 +31,7 @@ header, main, footer {
   padding: 10px 15px;
   color: white;
   border-radius: 30px;
-  border: 2px solid #972AE5;
+  border: 2px solid hsl(275, 78%, 53%);
   cursor: pointer;
   font-family: "Poppins", serif;
   transition: transform 0.2s ease, background 0.3s ease;
@@ -99,5 +99,5 @@ header, main, footer {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #972AE5;
+  background: hsl(275, 78%, 53%);
 }/*# sourceMappingURL=index.css.map */
