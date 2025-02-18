@@ -94,7 +94,7 @@ main .skills .item::after {
 main .projects {
   display: flex;
   flex-direction: column;
-  /* Quando a oculto-content estiver visível */
+  /* Quando .oculto-content estiver visível */
 }
 main .projects .titulo {
   margin-bottom: 20px;
@@ -108,19 +108,14 @@ main .projects .cards {
   position: relative;
   z-index: 0; /* Contexto padrão */
 }
-main .projects .card.no-hover {
-  pointer-events: none;
-  transform: none;
-  box-shadow: none;
-}
 main .projects .card {
   background-color: white;
   width: 393px;
   height: 245px;
   position: relative;
   z-index: 1;
-  transition: z-index 0.3s ease;
   margin: 15px 0;
+  transition: z-index 0.3s ease;
 }
 main .projects .card .banner {
   z-index: 1;
@@ -140,7 +135,7 @@ main .projects .card .titulo-projeto {
 main .projects .card .oculto {
   position: absolute;
   bottom: -60px;
-  z-index: 10;
+  z-index: 10; /* Posição padrão da .oculto */
   height: 60px;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -158,18 +153,17 @@ main .projects .card .oculto-content {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 9999; /* Garante que a .oculto-content esteja no topo */
   width: 80vw;
   height: 600px;
   display: none;
   flex-direction: column;
-  margin-top: 40px;
   background-color: rgba(0, 0, 0, 0.774);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  pointer-events: auto; /* Garantir que o conteúdo dentro da .oculto-content seja interativo */
+  pointer-events: auto; /* Permite interação com o conteúdo interno */
 }
 main .projects .card .oculto-content .close-button {
   position: absolute;
@@ -181,8 +175,12 @@ main .projects .card .oculto-content .close-button {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 11000; /* Garantir que o botão de fechar fique acima de tudo */
+  z-index: 10000; /* Garante que o botão de fechar fique no topo */
+  pointer-events: auto; /* Garante que o botão seja clicável */
   transition: transform 0.3s ease;
+}
+main .projects .card .oculto-content .close-button:hover {
+  transform: scale(1.2);
 }
 main .projects .card .oculto-content .content {
   height: 90%;
@@ -194,12 +192,12 @@ main .projects .card .oculto-content .content .video {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 11000;
+  z-index: 10000; /* Garante que o vídeo fique no topo */
+  pointer-events: auto; /* Permite interação com o vídeo */
 }
 main .projects .card .oculto-content .content .info {
   width: 50%;
   text-align: justify;
-  position: relative;
   font-weight: 500;
   color: #888;
   font-size: 15px;
@@ -224,9 +222,6 @@ main .projects .card .oculto-content .content .info span {
   margin: 0px 0px 0px 15px;
   color: #6a5acd;
 }
-main .projects .card .oculto-content .close-button:hover {
-  transform: scale(1.2);
-}
 main .projects .card .oculto-content .links {
   height: 10%;
   display: flex;
@@ -241,20 +236,25 @@ main .projects .card .oculto-content .links a {
   padding: 5px 15px;
   border-radius: 5px;
   font-weight: 400;
-  pointer-events: all;
 }
 main .projects .card .oculto-content.visible {
   display: flex;
 }
 main .projects .card:hover {
-  z-index: 100;
+  z-index: 100; /* Eleva o card ao passar o mouse */
 }
-main .projects .card:hover .banner, main .projects .card:hover .titulo-projeto {
+main .projects .card:hover .banner,
+main .projects .card:hover .titulo-projeto {
   display: none;
 }
 main .projects .card:hover .oculto {
   opacity: 1;
   transform: translateY(0);
+}
+main .projects .card.no-hover {
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
 }
 main .projects .card::after {
   background-image: linear-gradient(90deg, #8257E6 0%, #A40EE4 92.32%);
@@ -266,7 +266,7 @@ main .projects .card::after {
   bottom: 0;
 }
 main .projects.content-visible .card {
-  z-index: -1;
+  z-index: -1; /* Coloca os outros cards no fundo */
 }
 main .contacts {
   display: flex;

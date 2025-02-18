@@ -129,20 +129,14 @@ main {
             z-index: 0; /* Contexto padrão */
         }
     
-        .card.no-hover {
-            pointer-events: none;
-            transform: none;
-            box-shadow: none;
-        }
-    
         .card {
             background-color: white;
             width: 393px;
             height: 245px;
             position: relative;
             z-index: 1;
-            transition: z-index 0.3s ease;
             margin: 15px 0;
+            transition: z-index 0.3s ease;
     
             .banner {
                 z-index: 1;
@@ -163,7 +157,7 @@ main {
             .oculto {
                 position: absolute;
                 bottom: -60px;
-                z-index: 10;
+                z-index: 10; /* Posição padrão da .oculto */
                 height: 60px;
                 border-bottom-right-radius: 30px;
                 border-bottom-left-radius: 30px;
@@ -182,18 +176,17 @@ main {
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
-                z-index: 9999;
+                z-index: 9999; /* Garante que a .oculto-content esteja no topo */
                 width: 80vw;
                 height: 600px;
                 display: none;
                 flex-direction: column;
-                margin-top: 40px;
                 background-color: rgba(0, 0, 0, 0.774);
                 backdrop-filter: blur(10px);
                 border-radius: 15px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-                pointer-events: auto; /* Garantir que o conteúdo dentro da .oculto-content seja interativo */
-                
+                pointer-events: auto; /* Permite interação com o conteúdo interno */
+    
                 .close-button {
                     position: absolute;
                     top: 10px;
@@ -204,8 +197,13 @@ main {
                     font-size: 24px;
                     font-weight: bold;
                     cursor: pointer;
-                    z-index: 11000; /* Garantir que o botão de fechar fique acima de tudo */
+                    z-index: 10000; /* Garante que o botão de fechar fique no topo */
+                    pointer-events: auto; /* Garante que o botão seja clicável */
                     transition: transform 0.3s ease;
+    
+                    &:hover {
+                        transform: scale(1.2);
+                    }
                 }
     
                 .content {
@@ -218,13 +216,13 @@ main {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        z-index: 11000;
+                        z-index: 10000; /* Garante que o vídeo fique no topo */
+                        pointer-events: auto; /* Permite interação com o vídeo */
                     }
     
                     .info {
                         width: 50%;
                         text-align: justify;
-                        position: relative;
                         font-weight: 500;
                         color: #888;
                         font-size: 15px;
@@ -255,26 +253,21 @@ main {
                     }
                 }
     
-                .close-button:hover {
-                    transform: scale(1.2);
-                }
-    
                 .links {
                     height: 10%;
                     display: flex;
                     align-items: center;
                     justify-content: left;
-                }
     
-                .links a {
-                    margin: 0 10px 20px 15px;
-                    color: white;
-                    text-decoration: none;
-                    background-image: linear-gradient(90deg, #8257e6 0%, #a40ee4 92.32%);
-                    padding: 5px 15px;
-                    border-radius: 5px;
-                    font-weight: 400;
-                    pointer-events: all;
+                    a {
+                        margin: 0 10px 20px 15px;
+                        color: white;
+                        text-decoration: none;
+                        background-image: linear-gradient(90deg, #8257e6 0%, #a40ee4 92.32%);
+                        padding: 5px 15px;
+                        border-radius: 5px;
+                        font-weight: 400;
+                    }
                 }
     
                 &.visible {
@@ -283,9 +276,10 @@ main {
             }
     
             &:hover {
-                z-index: 100;
+                z-index: 100; /* Eleva o card ao passar o mouse */
     
-                .banner, .titulo-projeto {
+                .banner,
+                .titulo-projeto {
                     display: none;
                 }
     
@@ -293,6 +287,12 @@ main {
                     opacity: 1;
                     transform: translateY(0);
                 }
+            }
+    
+            &.no-hover {
+                pointer-events: none;
+                transform: none;
+                box-shadow: none;
             }
     
             &::after {
@@ -306,15 +306,13 @@ main {
             }
         }
     
-        /* Quando a oculto-content estiver visível */
+        /* Quando .oculto-content estiver visível */
         &.content-visible {
             .card {
-                z-index: -1;
+                z-index: -1; /* Coloca os outros cards no fundo */
             }
         }
-    }
-    
-       
+    }   
     .contacts {
         display: flex;
         flex-direction: column;

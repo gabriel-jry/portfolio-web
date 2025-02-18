@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/index.css">
-    <link rel="stylesheet" href="scss/header.css">
-    <link rel="stylesheet" href="scss/main.css">
-    <link rel="stylesheet" href="scss/footer.css">
-    <link rel="stylesheet" href="scss/light-mode.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/light-mode.css">
+    <link rel="stylesheet" href="styles/media-queries-header.css">
+    <link rel="stylesheet" href="styles/media-queries-main.css">
+    <link rel="stylesheet" href="styles/media-queries-footer.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <title>Portfólio</title>
 </head>
@@ -169,7 +172,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card zoom-effect">
                     <div class="banner"></div>
                     <div class="titulo-projeto">
@@ -217,7 +219,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card zoom-effect">
                     <div class="banner"></div>
                     <div class="titulo-projeto">
@@ -265,7 +266,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card zoom-effect">
                     <div class="banner"></div>
                     <div class="titulo-projeto">
@@ -313,7 +313,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card zoom-effect">
                     <div class="banner"></div>
                     <div class="titulo-projeto">
@@ -361,7 +360,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card zoom-effect">
                     <div class="banner"></div>
                     <div class="titulo-projeto">
@@ -409,7 +407,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card zoom-effect">
                     <div class="banner"></div>
                     <div class="titulo-projeto">
@@ -457,7 +454,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card zoom-effect">
                     <div class="banner"></div>
                     <div class="titulo-projeto">
@@ -505,103 +501,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="card zoom-effect">
-                    <div class="banner"></div>
-                    <div class="titulo-projeto">
-                        <h3>Título do projeto</h3>
-                    </div>
-                    <div class="oculto">
-                        <p>24 de outubro de 2025</p>
-                        <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
-                    </div>
-                    <div class="oculto-content">
-                        <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
-                        <div class="content">
-                            <div class="video">
-                                <iframe
-                                    width="560"
-                                    height="315"
-                                    src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen
-                                ></iframe>
-                            </div>
-                            <div class="info">
-                                <h1>Titulo do projeto</h1>
-                                <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
-                                </p>
-                                <ul>
-                                    <li>tecnologia a</li>
-                                    <li>tecnologia b</li>
-                                    <li>tecnologia c</li>
-                                    <li>tecnologia d</li>
-                                    <li>tecnologia e</li>
-                                </ul>
-                                <span>01/01/00001 criado por gabriel</span>
-                            </div>
-                        </div>
-                        <div class="links">
-                            <a href="#" class="zoom-effect">Acessar Projeto</a>
-                            <a href="#" class="zoom-effect">Acessar Repositório</a>
-                            <a href="#" class="zoom-effect">Github</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card zoom-effect">
-                    <div class="banner"></div>
-                    <div class="titulo-projeto">
-                        <h3>Título do projeto</h3>
-                    </div>
-                    <div class="oculto">
-                        <p>24 de outubro de 2025</p>
-                        <input type="button" value="ver mais" class="btn" onclick="mostrar_oculto_content(this)">
-                    </div>
-                    <div class="oculto-content">
-                        <button class="close-button" onclick="fechar_oculto_content(this)">✖</button>
-                        <div class="content">
-                            <div class="video">
-                                <iframe
-                                    width="560"
-                                    height="315"
-                                    src="https://www.youtube.com/embed/muDpH2Ty2tg?autoplay=1&mute=1&si=7UlkIT88zhEpP7_7"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen
-                                ></iframe>
-                            </div>
-                            <div class="info">
-                                <h1>Titulo do projeto</h1>
-                                <p>Breve descrição Lorem ipsum dolor sit amet consectetur...
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet sunt ab natus, quia cum, consequatur labore voluptatum itaque vero perferendis velit nemo fuga quidem voluptatibus laboriosam, debitis aliquam amet?
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam cumque velit, odit necessitatibus commodi inventore deleniti consequuntur tenetur, accusamus ratione tempora sunt vero cum mollitia eligendi aperiam, itaque ea.
-                                </p>
-                                <ul>
-                                    <li>tecnologia a</li>
-                                    <li>tecnologia b</li>
-                                    <li>tecnologia c</li>
-                                    <li>tecnologia d</li>
-                                    <li>tecnologia e</li>
-                                </ul>
-                                <span>01/01/00001 criado por gabriel</span>
-                            </div>
-                        </div>
-                        <div class="links">
-                            <a href="#" class="zoom-effect">Acessar Projeto</a>
-                            <a href="#" class="zoom-effect">Acessar Repositório</a>
-                            <a href="#" class="zoom-effect">Github</a>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="card zoom-effect">
                     <div class="banner"></div>
                     <div class="titulo-projeto">
@@ -650,11 +549,7 @@
                     </div>
                 </div>
             </div>
-            
-            
-            <!-- Repita os cards conforme necessário -->
         </section>
-        
 
         <section class="contacts slide-in" id="contacts">
             <h1>Contatos</h1>

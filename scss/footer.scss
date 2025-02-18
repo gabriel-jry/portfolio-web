@@ -5,13 +5,14 @@ footer {
     position: relative;
 
     p {
-        padding: 10px 0;
+        padding: 15px 0;
+        font-size: 20px;
     }
 
     &::before {
         background-image: u.$gradient;
         content: "";
-        height: 1px;
+        height: 3px;
         width: 100%;
         display: block;
         position: absolute;

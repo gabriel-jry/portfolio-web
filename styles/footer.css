@@ -5,12 +5,13 @@ footer {
   position: relative;
 }
 footer p {
-  padding: 10px 0;
+  padding: 15px 0;
+  font-size: 20px;
 }
 footer::before {
   background-image: linear-gradient(90deg, #8257E6 0%, #A40EE4 92.32%);
   content: "";
-  height: 1px;
+  height: 3px;
   width: 100%;
   display: block;
   position: absolute;
