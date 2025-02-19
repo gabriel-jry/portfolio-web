@@ -1,9 +1,129 @@
+/* Regras comuns para telas entre 0px e 950px */
+@media (max-width: 950px) and (min-width: 0px) {
+    .home {
+        flex-direction: column-reverse;
+
+        div {
+            &:first-child {
+                text-align: center;
+                font-size: 25px;
+
+                h1, p, span {
+                    white-space: normal;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                span {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 15px;
+                    font-size: 18px;
+                }
+            }
+
+            &:last-child {
+                img {
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+        }
+    }
+
+    .skills {
+        .content .item {
+            width: 100px;
+            height: 100px;
+
+            h1 {
+                margin-top: 10px;
+                font-size: 15px;
+            }
+
+            img {
+                margin: auto;
+                height: 40px;
+                width: 40px;
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    .contacts {
+        min-height: 70vh !important;
+
+        .content {
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .info {
+                margin: 20px;
+            }
+        }
+    }
+}
+
 /* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
-    
+    main {
+        .home, .projects, .contacts, .about {
+            margin-bottom: 55px;
+        }
+        .home {
+            min-height: 50px;
+
+            div {
+                &:first-child {
+                    input {
+                        width: 300px;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+
+        .skills {
+            min-height: 70vh;
+        }
+    }
 }
 
 /* Tablet (max-width: 768px) */
-@media (max-width: 768px) {
+@media (max-width: 950px) {
+    main {
+        .home {
+            min-height: 65vh;
 
+            div {
+                &:last-child {
+                    margin-top: 150px;
+                }
+            }
+        }
+
+        .about {
+            min-height: 40vh;
+        }
+
+        .skills {
+            min-height: 40vh;
+        }
+
+        .projects {
+            .cards {
+                flex-direction: row;
+                width: 100vw;
+
+                .card {
+                    margin: 10px;
+                    width: 370px;
+                    height: 220px;
+                }
+            }
+        }
+    }
 }

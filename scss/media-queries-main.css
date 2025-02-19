@@ -1,0 +1,92 @@
+/* Regras comuns para telas entre 0px e 950px */
+@media (max-width: 950px) and (min-width: 0px) {
+  .home {
+    flex-direction: column-reverse;
+  }
+  .home div:first-child {
+    text-align: center;
+    font-size: 25px;
+  }
+  .home div:first-child h1, .home div:first-child p, .home div:first-child span {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .home div:first-child span {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  .home div:last-child img {
+    width: 250px;
+    height: 250px;
+  }
+  .skills .content .item {
+    width: 100px;
+    height: 100px;
+  }
+  .skills .content .item h1 {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  .skills .content .item img {
+    margin: auto;
+    height: 40px;
+    width: 40px;
+    padding-bottom: 5px;
+  }
+  .contacts {
+    min-height: 70vh !important;
+  }
+  .contacts .content {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contacts .content .info {
+    margin: 20px;
+  }
+}
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  main .home, main .projects, main .contacts, main .about {
+    margin-bottom: 55px;
+  }
+  main .home {
+    min-height: 50px;
+  }
+  main .home div:first-child input {
+    width: 300px;
+    margin: auto;
+  }
+  main .skills {
+    min-height: 70vh;
+  }
+}
+/* Tablet (max-width: 768px) */
+@media (max-width: 950px) {
+  main .home {
+    min-height: 65vh;
+  }
+  main .home div:last-child {
+    margin-top: 150px;
+  }
+  main .about {
+    min-height: 40vh;
+  }
+  main .skills {
+    min-height: 40vh;
+  }
+  main .projects .cards {
+    flex-direction: row;
+    width: 100vw;
+  }
+  main .projects .cards .card {
+    margin: 10px;
+    width: 370px;
+    height: 220px;
+  }
+}/*# sourceMappingURL=media-queries-main.css.map */
