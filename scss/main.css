@@ -209,9 +209,22 @@ main .projects .card .oculto-content .content .info h1 {
   font-size: 25px;
 }
 main .projects .card .oculto-content .content .info p {
-  margin: 0px 15px;
-  max-height: 380px;
+  margin: 0px 65px 0px 0;
+  max-height: 300px;
   overflow-y: auto;
+}
+main .projects .card .oculto-content .content .info p ::-webkit-scrollbar {
+  width: 8px;
+}
+main .projects .card .oculto-content .content .info p ::-webkit-scrollbar-track {
+  background: #13131F;
+}
+main .projects .card .oculto-content .content .info p ::-webkit-scrollbar-thumb {
+  background: #552686;
+  border-radius: 5px;
+}
+main .projects .card .oculto-content .content .info p ::-webkit-scrollbar-thumb:hover {
+  background: hsl(275, 78%, 53%);
 }
 main .projects .card .oculto-content .content .info ul {
   margin-left: 35px;

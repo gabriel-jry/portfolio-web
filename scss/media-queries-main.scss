@@ -1,5 +1,7 @@
+@use 'utilitários.scss' as u;
+
 /* Regras comuns para telas entre 0px e 950px */
-@media (max-width: 950px) and (min-width: 0px) {
+@media (max-width: 1200px) and (min-width: 0px) {
     .home {
         flex-direction: column-reverse;
 
@@ -53,6 +55,61 @@
         }
     }
 
+    .projects {
+        .cards {
+            flex-direction: row;
+            width: 100vw;
+    
+            .card {
+                margin: 10px;
+                width: 370px;
+                height: 220px;
+    
+                .oculto-content {
+                    width: 90vw;
+                    padding: 5%;
+                    height: auto;
+    
+                    .content {
+                        flex-direction: column-reverse;
+                        box-sizing: border-box;
+    
+                        .video {
+                            margin: 30px 0;
+                            position: relative;
+                            width: 100%;
+                            padding-bottom: 56.25%; /* Mantém o vídeo 16:9 */
+                            height: 0;
+    
+                            iframe {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+    
+                        .info {
+                            width: 100%;
+                        
+                            p {
+                                margin: 0px 10px 0px 10px; /* Margem para espaçamento */
+                            }
+                        }
+                        
+                    }
+    
+                    .links {
+                        a {
+                            margin: 0 15px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .contacts {
         min-height: 70vh !important;
 
@@ -89,11 +146,37 @@
         .skills {
             min-height: 70vh;
         }
+
+        .projects {
+            .cards {
+                .card {
+                    .oculto-content {
+                        .links {
+                            display: flex; /* Exibe os links em linha */
+                            gap: 10px; /* Espaçamento entre os links */
+        
+                            a {
+                                height: 55px; /* Define uma altura fixa para os links */
+                                display: flex; /* Ativa o alinhamento flexbox */
+                                align-items: center; /* Alinha o texto verticalmente no centro */
+                                justify-content: center; /* Centraliza o texto horizontalmente */
+                                padding: 5px 15px; /* Adiciona um espaçamento interno lateral */
+                                text-align: center; /* Garante centralização do texto */
+                                box-sizing: border-box; /* Inclui padding e bordas no tamanho total */
+                                margin: 0; /* Remove margens externas */
+                                width: auto; /* Permite o tamanho automático horizontal */
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 }
 
 /* Tablet (max-width: 768px) */
-@media (max-width: 950px) {
+@media (max-width: 1200px) and (min-width: 500px){
     main {
         .home {
             min-height: 65vh;
@@ -111,19 +194,6 @@
 
         .skills {
             min-height: 40vh;
-        }
-
-        .projects {
-            .cards {
-                flex-direction: row;
-                width: 100vw;
-
-                .card {
-                    margin: 10px;
-                    width: 370px;
-                    height: 220px;
-                }
-            }
-        }
+        }    
     }
 }

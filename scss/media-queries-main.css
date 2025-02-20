@@ -1,5 +1,8 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* Regras comuns para telas entre 0px e 950px */
-@media (max-width: 950px) and (min-width: 0px) {
+@media (max-width: 1200px) and (min-width: 0px) {
   .home {
     flex-direction: column-reverse;
   }
@@ -39,6 +42,47 @@
     width: 40px;
     padding-bottom: 5px;
   }
+  .projects .cards {
+    flex-direction: row;
+    width: 100vw;
+  }
+  .projects .cards .card {
+    margin: 10px;
+    width: 370px;
+    height: 220px;
+  }
+  .projects .cards .card .oculto-content {
+    width: 90vw;
+    padding: 5%;
+    height: auto;
+  }
+  .projects .cards .card .oculto-content .content {
+    flex-direction: column-reverse;
+    box-sizing: border-box;
+  }
+  .projects .cards .card .oculto-content .content .video {
+    margin: 30px 0;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Mantém o vídeo 16:9 */
+    height: 0;
+  }
+  .projects .cards .card .oculto-content .content .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .projects .cards .card .oculto-content .content .info {
+    width: 100%;
+  }
+  .projects .cards .card .oculto-content .content .info p {
+    margin: 0px 10px 0px 10px; /* Margem para espaçamento */
+  }
+  .projects .cards .card .oculto-content .links a {
+    margin: 0 15px 0 0;
+  }
   .contacts {
     min-height: 70vh !important;
   }
@@ -65,9 +109,24 @@
   main .skills {
     min-height: 70vh;
   }
+  main .projects .cards .card .oculto-content .links {
+    display: flex; /* Exibe os links em linha */
+    gap: 10px; /* Espaçamento entre os links */
+  }
+  main .projects .cards .card .oculto-content .links a {
+    height: 55px; /* Define uma altura fixa para os links */
+    display: flex; /* Ativa o alinhamento flexbox */
+    align-items: center; /* Alinha o texto verticalmente no centro */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    padding: 5px 15px; /* Adiciona um espaçamento interno lateral */
+    text-align: center; /* Garante centralização do texto */
+    box-sizing: border-box; /* Inclui padding e bordas no tamanho total */
+    margin: 0; /* Remove margens externas */
+    width: auto; /* Permite o tamanho automático horizontal */
+  }
 }
 /* Tablet (max-width: 768px) */
-@media (max-width: 950px) {
+@media (max-width: 1200px) and (min-width: 500px) {
   main .home {
     min-height: 65vh;
   }
@@ -79,14 +138,5 @@
   }
   main .skills {
     min-height: 40vh;
-  }
-  main .projects .cards {
-    flex-direction: row;
-    width: 100vw;
-  }
-  main .projects .cards .card {
-    margin: 10px;
-    width: 370px;
-    height: 220px;
   }
 }/*# sourceMappingURL=media-queries-main.css.map */
