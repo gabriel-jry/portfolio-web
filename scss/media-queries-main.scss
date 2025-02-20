@@ -140,6 +140,11 @@
                         margin: auto;
                     }
                 }
+
+                &:last-child {
+                    margin-top: 150px;
+                    margin-bottom: 20px;
+                }
             }
         }
 
@@ -172,6 +177,9 @@
             }
         }
         
+        .contacts {
+            margin-bottom: 0;
+        }
     }
 }
 
